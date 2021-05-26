@@ -1,0 +1,11 @@
+{
+  // The settings below will allow stylelint to auto fix issues inside .(s)css files
+  //
+  // Disable VSCode's default style validators
+  "css.validate": false,
+  "scss.validate": false,
+  // Tell VSCode to fix all stylelint related issues on save
+  "editor.codeActionsOnSave": {
+    "source.fixAll.stylelint": true
+  },
+}
