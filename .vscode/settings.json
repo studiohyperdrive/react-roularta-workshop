@@ -4,8 +4,9 @@
   // Disable VSCode's default style validators
   "css.validate": false,
   "scss.validate": false,
-  // Tell VSCode to fix all stylelint related issues on save
+  // Tell VSCode to fix all eslint and stylelint related issues on save
   "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true,
     "source.fixAll.stylelint": true
   },
 }
