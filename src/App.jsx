@@ -1,4 +1,5 @@
 import { Button, Container, Footer, Header, Navigation } from './components';
+import { BrowserRouter as Router } from 'react-router-dom';
 
 import styles from './App.module.scss';
 import './styles/main.scss';
@@ -20,4 +21,19 @@ function App() {
 	);
 }
 
-export default App;
+/**
+ * This Root component will be used to wrap different providers around our App
+ * that will be needed globally e.g.:
+ * - Router
+ * - State
+ * - Other 3rd party libs
+ */
+function Root() {
+	return (
+		<Router>
+			<App />
+		</Router>
+	);
+}
+
+export default Root;
