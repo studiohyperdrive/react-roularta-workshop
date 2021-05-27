@@ -1,19 +1,19 @@
-import { Button, Footer, Header, Navigation } from './components';
+import { Button, Container, Footer, Header, Navigation } from './components';
 
-import './App.css';
+import styles from './App.module.scss';
 import './styles/main.scss';
 
 function App() {
 	return (
-		<div className="app">
+		<div className={styles['c-app']}>
 			<Navigation brand="My app" />
 			<Header title={<p>Edit <code>src/App.js</code> and save to reload.</p>} />
-			<main>
-				<div className="container">
+			<main className="u-main">
+				<Container className="u-text-center">
 					<Button label="Click me" />
-				</div>
+				</Container>
 			</main>
-			<Footer>
+			<Footer className="u-text-center">
 				This is My App's footer
 			</Footer>
 		</div>

@@ -1,21 +1,17 @@
-import { Logo } from "../Logo"
+import clsx from 'clsx';
+import { Link } from '../Link';
+import { Logo } from '../Logo';
+import styles from './Navigation.module.scss';
 
-const Navigation = ({ brand }) => {
+const Navigation = ({ brand, className }) => {
 	return (
-		<nav className="navigation">
-			<div className="navigation__brand">
+		<nav className={clsx(className, styles['c-navigation'])}>
+			<div className={clsx(styles['c-navigation__brand'])}>
 				<Logo />
 				<span>{brand}</span>
 			</div>
-			<div className="navigation__items">
-				<a
-					className="link"
-					href="https://reactjs.org"
-					target="_blank"
-					rel="noopener noreferrer"
-				>
-					Learn React
-				</a>
+			<div className={clsx(styles['c-navigation__items'])}>
+				<Link href="https://reactjs.org">Learn React</Link>
 			</div>
 		</nav>
 	);
