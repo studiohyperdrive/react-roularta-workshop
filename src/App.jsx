@@ -1,18 +1,21 @@
-import { Button, Container, Footer, Header, Navigation } from './components';
 import { BrowserRouter as Router } from 'react-router-dom';
+import { Footer, Navigation } from './components';
+import { RouteSwitch } from './router';
 
 import styles from './App.module.scss';
 import './styles/main.scss';
 
 function App() {
+	const navigationItems = [
+		{ label: 'Home', to: '/' },
+		{ label: 'List', to: '/list' },
+	];
+
 	return (
 		<div className={styles['c-app']}>
-			<Navigation brand="My app" />
-			<Header title={<p>Edit <code>src/App.js</code> and save to reload.</p>} />
+			<Navigation brand="My App" items={navigationItems} />
 			<main className="u-main">
-				<Container className="u-text-center">
-					<Button label="Click me" />
-				</Container>
+				<RouteSwitch />
 			</main>
 			<Footer className="u-text-center">
 				This is My App's footer
