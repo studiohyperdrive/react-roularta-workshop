@@ -1,6 +1,7 @@
 import { Button, Footer, Header, Navigation } from './components';
 
 import './App.css';
+import './styles/main.scss';
 
 function App() {
 	return (
