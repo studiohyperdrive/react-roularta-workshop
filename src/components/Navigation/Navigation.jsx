@@ -23,7 +23,7 @@ const Navigation = ({ brand, className, items = [] }) => {
 						{link.label}
 					</NavLink>
 				))}
-				<Link href="https://reactjs.org">Learn React</Link>
+				<Link href="https://reactjs.org" target="_blank">Learn React</Link>
 			</div>
 		</nav>
 	);
