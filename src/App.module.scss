@@ -6,4 +6,9 @@
 	min-height: 100vh;
 	background-color: $grey-dark;
 	color: $white;
+
+	&:global(.light-theme) {
+		background-color: $white;
+		color: $grey-dark;
+	}
 }

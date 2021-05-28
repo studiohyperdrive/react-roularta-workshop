@@ -1,11 +1,12 @@
 import { Redirect, Route, Switch } from 'react-router';
-import { HomeView, ListView, DetailView } from '../views';
+import { HomeView, ListView, DetailView, HooksView } from '../views';
 
 
 export const RouteSwitch = () => {
 	return (
 		<Switch>
 			<Route path="/" component={HomeView} exact />
+			<Route path="/hooks" component={HooksView} />
 			<Route path="/list" component={ListView} />
 			{/* We can redirect from any path we want to any path */}
 			<Redirect from="/overview" to="/list" />
