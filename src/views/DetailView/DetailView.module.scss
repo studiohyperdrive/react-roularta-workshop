@@ -1,0 +1,18 @@
+@import '../../styles/settings';
+
+.v-detail {
+	dl {
+		padding: 0.5rem 0;
+
+		dt {
+			clear: left;
+			float: left;
+			padding-right: 1rem;
+		}
+
+		dd {
+			margin: 0;
+			color: $blue;
+		}
+	}
+}
