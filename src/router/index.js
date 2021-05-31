@@ -15,7 +15,7 @@ export const RouteSwitch = () => {
 		<Switch>
 			<Route path={ROUTE_PATHS.home} component={HomeView} exact />
 			<Route path={ROUTE_PATHS.hooks} component={HooksView} />
-			<Route path={ROUTE_PATHS.list.overview} component={ListView} />
+			<Route path={ROUTE_PATHS.list.overview} component={ListView} exact />
 			{/* We can redirect from any path we want to any path */}
 			<Redirect from="/overview" to={ROUTE_PATHS.list.overview} />
 			<Route path={ROUTE_PATHS.list.detail} component={DetailView} />
