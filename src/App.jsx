@@ -1,18 +1,18 @@
+import clsx from 'clsx';
 import { useState } from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { Footer, Navigation } from './components';
 import { ThemeContext } from './context/ThemeContext';
-import { RouteSwitch } from './router';
+import { RouteSwitch, ROUTE_PATHS } from './router';
 
 import styles from './App.module.scss';
 import './styles/main.scss';
-import clsx from 'clsx';
 
 function App({ theme }) {
 	const navigationItems = [
-		{ label: 'Home', to: '/' },
-		{ label: 'Hooks', to: '/hooks' },
-		{ label: 'List', to: '/list' },
+		{ label: 'Home', to: ROUTE_PATHS.home },
+		{ label: 'Hooks', to: ROUTE_PATHS.hooks },
+		{ label: 'List', to: ROUTE_PATHS.list.overview },
 	];
 
 	return (
