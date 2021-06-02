@@ -1,32 +1,29 @@
-import { Fragment, useEffect, useState } from 'react';
+import { Fragment, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { Redirect } from 'react-router';
 import { Button, Container, Loader } from '../../components';
 import { ROUTE_PATHS } from '../../router';
-import { gotService } from '../../services/got';
+import {
+	characterByIdSelector,
+	charactersErrorSelector,
+	characterLoadingSelector,
+	getCharacterById,
+} from '../../store/characters';
 import styles from './DetailView.module.scss';
 
 const DetailView = ({ history, match }) => {
 	const { detailId } = match.params;
 
-	const [character, setCharacter] = useState();
-	const [isLoading, setIsLoading] = useState(true);
-	const [hasError, setHasError] = useState(false);
+	const character = useSelector((state) => characterByIdSelector(state, detailId));
+	const isLoading = useSelector(characterLoadingSelector);
+	const error = useSelector(charactersErrorSelector);
+	const dispatch = useDispatch();
 
 	useEffect(() => {
-		if (detailId) {
-			setHasError(false);
-			setIsLoading(true);
-
-			gotService.getCharacter(detailId)
-				.then((response) => {
-					if (response?.data) {
-						setCharacter(response.data);
-					}
-				})
-				.catch(() => setHasError(true))
-				.finally(() => setIsLoading(false));
+		if (!character) {
+			dispatch(getCharacterById(detailId));
 		}
-	}, [detailId]); // We want to run this effect when detailId gets updated
+	}, [character, detailId, dispatch]); // We want to run this effect when detailId gets updated
 
 	// When no id is present, redirect to ListView
 	if (!detailId) {
@@ -73,7 +70,7 @@ const DetailView = ({ history, match }) => {
 			</p>
 			{isLoading
 				? <Loader isLoading={isLoading} />
-				: hasError
+				: error
 					? renderError()
 					: renderCharacterData()}
 		</Container>

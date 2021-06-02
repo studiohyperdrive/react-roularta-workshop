@@ -1,22 +1,20 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { generatePath, Link as RouterLink } from 'react-router-dom';
 import { Button, Container, Loader } from '../../components';
 import { ROUTE_PATHS } from '../../router';
-import { gotService } from '../../services/got';
+import { charactersLoadingSelector, charactersSelector, getCharacters } from '../../store/characters';
 
 const ListView = () => {
-	const [characters, setCharacters] = useState([]);
-	const [isLoading, setIsLoading] = useState(true);
+	const characters = useSelector(charactersSelector);
+	const isLoading = useSelector(charactersLoadingSelector);
+	const dispatch = useDispatch();
+
+	console.log(characters);
 
 	useEffect(() => {
-		gotService.getCharacters()
-			.then((response) => {
-				if (response?.data?.length) {
-					setCharacters(response.data);
-				}
-			})
-			.finally(() => setIsLoading(false));
-	}, []);
+		dispatch(getCharacters());
+	}, [dispatch]);
 
 	return (
 		<Container>
