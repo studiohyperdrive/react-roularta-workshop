@@ -1,5 +1,5 @@
 import { useReducer } from 'react';
-import { Button } from '../../../../components';
+import { Button } from '../../../../../../components';
 
 function reducer(state, action) {
 	switch (action.type) {

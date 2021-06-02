@@ -1,6 +1,6 @@
 import { useContext } from 'react';
-import { Button } from '../../../../components';
-import { ThemeContext } from '../../../../context/ThemeContext';
+import { Button } from '../../../../../components';
+import { ThemeContext } from '../../../../../context/ThemeContext';
 
 export const ThemeSwitcher = () => {
 	const { theme, toggleTheme } = useContext(ThemeContext);

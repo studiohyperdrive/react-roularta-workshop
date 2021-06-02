@@ -1,23 +1,23 @@
-import { cleanup } from '@testing-library/react';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
+
+/**
+ * Opdracht:
+ * Maak een custom hook waarin we onze data fetch logica kunnen zetten
+ */
 
 const fetchGotCharacters = async () => {
 	const response = await axios.get('https://www.anapioficeandfire.com/api/characters');
 	return response?.data;
 };
 
-export const DataFetch = () => {
+export const CustomDataFetch = () => {
 	const [data, setData] = useState();
 
 	useEffect(() => {
 		fetchGotCharacters().then((characters) => {
 			setData(characters);
 		});
-
-		return () => {
-			cleanup();
-		};
 	}, []);
 
 	return (

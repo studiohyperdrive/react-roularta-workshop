@@ -1,7 +1,12 @@
 import { useState } from 'react';
-import { Button } from '../../../../components';
+import { Button } from '../../../../../components';
 
-export const Counter = () => {
+/**
+ * Opdracht:
+ * Werk de useState counter uit met useReducer
+ */
+
+export const ReducerCounter = () => {
 	const [counter, setCounter] = useState(0);
 
 	const onCounterUpdate = (countUpdate) => {
@@ -19,3 +24,4 @@ export const Counter = () => {
 		</>
 	);
 };
+

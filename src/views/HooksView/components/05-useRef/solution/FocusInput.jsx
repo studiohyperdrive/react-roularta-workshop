@@ -1,5 +1,5 @@
 import { useRef } from 'react';
-import { Button } from '../../../../components';
+import { Button } from '../../../../../../components';
 
 export const FocusInput = () => {
 	const inputRef = useRef();
