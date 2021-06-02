@@ -1,9 +1,11 @@
 import clsx from 'clsx';
 import { useState } from 'react';
+import { Provider } from 'react-redux';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { Footer, Navigation } from './components';
 import { ThemeContext } from './context/ThemeContext';
 import { RouteSwitch, ROUTE_PATHS } from './router';
+import { store } from './store';
 
 import styles from './App.module.scss';
 import './styles/main.scss';
@@ -45,11 +47,13 @@ function Root() {
 	};
 
 	return (
-		<ThemeContext.Provider value={{ theme, toggleTheme }}>
-			<Router>
-				<App theme={theme} />
-			</Router>
-		</ThemeContext.Provider>
+		<Provider store={store}>
+			<ThemeContext.Provider value={{ theme, toggleTheme }}>
+				<Router>
+					<App theme={theme} />
+				</Router>
+			</ThemeContext.Provider>
+		</Provider>
 	);
 }
 
