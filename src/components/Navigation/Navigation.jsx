@@ -1,4 +1,5 @@
 import clsx from 'clsx';
+import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom';
 import { Link } from '../Link';
 import { Logo } from '../Logo';
@@ -27,6 +28,16 @@ const Navigation = ({ brand, className, items = [] }) => {
 			</div>
 		</nav>
 	);
+};
+
+Navigation.propTypes = {
+	brand: PropTypes.string,
+	className: PropTypes.string,
+	items: PropTypes.arrayOf(PropTypes.shape({
+		key: PropTypes.string,
+		label: PropTypes.string.isRequired,
+		to: PropTypes.string.isRequired,
+	})),
 };
 
 export default Navigation;

@@ -1,4 +1,5 @@
 import clsx from 'clsx';
+import PropTypes from 'prop-types';
 import { Container } from '../Container';
 import styles from './Header.module.scss';
 
@@ -12,6 +13,11 @@ const Header = ({ className, title }) => {
 			</Container>
 		</header>
 	);
+};
+
+Header.propTypes = {
+	className: PropTypes.string,
+	title: PropTypes.string.isRequired,
 };
 
 export default Header;
