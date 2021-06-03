@@ -12,4 +12,15 @@ module.exports = {
 
 		'react/self-closing-comp': 'warn',
 	},
+
+	overrides: [
+		{
+			files: [
+				'**/*.stories.*',
+			],
+			rules: {
+				'import/no-anonymous-default-export': 'off',
+			},
+		},
+	],
 };
