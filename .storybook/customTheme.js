@@ -30,5 +30,5 @@ export default create({
 
 	brandTitle: 'Styleguide',
 	brandUrl: 'https://reactjs.org',
-	// brandImage: '/logo192.png',
+	brandImage: '/logo192.png',
 });
