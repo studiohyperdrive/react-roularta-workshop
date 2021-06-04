@@ -13,3 +13,21 @@
 		background: $blue-dark;
 	}
 }
+
+.c-button--dark {
+	background: darken($blue, 50%);
+	color: $white;
+
+	&:hover {
+		background: darken($blue-dark, 50%);
+	}
+}
+
+.c-button--light {
+	background: $white;
+	color: $blue;
+
+	&:hover {
+		background: darken($white, 30%);
+	}
+}
