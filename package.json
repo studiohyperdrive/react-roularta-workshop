@@ -25,7 +25,7 @@
     "lint:js": "eslint --ext .js,.jsx src",
     "lint:scss": "stylelint 'src/**/*.scss' --allow-empty-input",
     "lint": "npm run lint:js && npm run lint:scss",
-    "storybook": "start-storybook -p 6006 -s public",
+    "storybook": "start-storybook -p 6006 -s public --no-manager-cache",
     "build-storybook": "build-storybook -s public"
   },
   "browserslist": {
@@ -41,6 +41,7 @@
     ]
   },
   "devDependencies": {
+    "@storybook/addon-a11y": "^6.2.9",
     "@storybook/addon-actions": "^6.2.9",
     "@storybook/addon-essentials": "^6.2.9",
     "@storybook/addon-links": "^6.2.9",
